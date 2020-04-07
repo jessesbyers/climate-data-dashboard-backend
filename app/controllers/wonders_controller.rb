@@ -1,2 +1,0 @@
-class WondersController < ApplicationController
-end
