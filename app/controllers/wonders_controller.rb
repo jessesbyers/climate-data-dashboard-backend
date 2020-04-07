@@ -1,24 +1,24 @@
-class Api::V1::WondersController < ApplicationController
+class WondersController < ApplicationController
 
     before_action :set_chart
 
     def index
         @wonders = @chart.wonders
-        render json: @wonders
+        render json: WonderSerializer.new(@wonders)
 
     end
 
     def show
         # @wonder = Wonder.find(params[:id])
         @wonder = @chart.wonders.find_by(id: params[:id])
-        render json: @wonder
+        render json: WonderSerializer.new(@wonder)
 
     end
 
     def create
         @wonder = @chart.wonders.new(wonder_params)
         if @wonder.save
-            render json: @wonder
+            render json: WonderSerializer.new(@wonder)
         else
             render json: {error: "Wonder cannot be saved to the database. Please try again."}
         end

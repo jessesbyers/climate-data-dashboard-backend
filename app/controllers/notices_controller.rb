@@ -1,23 +1,23 @@
-class Api::V1::NoticesController < ApplicationController
+class NoticesController < ApplicationController
     before_action :set_chart
 
     def index
         @notices = @chart.notices
-        render json: @notices
+        render json: NoticeSerializer.new(@notices)
 
     end
 
     def show
         # @notice = Notice.find(params[:id])
         @notice = @chart.notices.find_by(id: params[:id])
-        render json: @notice
+        render json: NoticeSerializer.new(@notice)
 
     end
 
     def create
         @notice = @chart.notices.new(notice_params)
         if @notice.save
-            render json: @notice
+            render json: NoticeSerializer.new(@notice)
         else
             render json: {error: "Notice cannot be saved to the database. Please try again."}
         end
