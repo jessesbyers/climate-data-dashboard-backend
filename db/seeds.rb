@@ -1,7 +1,37 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+chart1data = {
+    name: "Contiguous U.S., Average Temperature, January-December",
+    data_url: "https://www.ncdc.noaa.gov/cag/national/time-series/110-tavg-12-12-1895-2020.json?base_prd=true&begbaseyear=1930&endbaseyear=2000"
+}
+
+chart2data = {
+    name: "Contiguous U.S., Precipitation, January-December",
+    data_url: "https://www.ncdc.noaa.gov/cag/national/time-series/110-pcp-12-12-1895-2020.json?base_prd=true&begbaseyear=1930&endbaseyear=2000"
+}
+
+
+chart1 = Chart.new(chart1data)
+chart2 = Chart.new(chart2data)
+chart1.save
+chart2.save
+
+notice1 = Notice.new(content: "The temperature line zigzags up and down, but the early 1900s ziglags are lower than the early 2000s zigzags", votes: 5, chart_id: 1)
+notice2 = Notice.new(content: "The highest US average temperature was in 2012 (55 degrees F) and the lowest average temperature was in 1917 (50 degrees F)", votes: 2, chart_id: 1)
+
+notice3 = Notice.new(content: "There was very low precipitation between 1952 and 1956", votes: 3, chart_id: 2)
+notice4 = Notice.new(content: "Precipitation has been above average every year since 2013.", votes: 0, chart_id: 2)
+
+wonder1 = Wonder.new(content: "Why does the line zigzag up and and down so often?", votes: 0, chart_id: 1)
+wonder2 = Wonder.new(content: "Why was it so much colder before 1930?", votes: 3, chart_id: 1)
+
+wonder3 = Wonder.new(content: "Why do we hear about droughtas and wildfires so often if average precipitation has been above average the past 7 years?", votes: 5, chart_id: 2)
+wonder4 = Wonder.new(content: "Is there a relationship between temperature and precipitation patterns each year?", votes: 2, chart_id: 2)
+
+notice1.save
+notice2.save
+notice3.save
+notice4.save
+
+wonder1.save
+wonder2.save
+wonder3.save
+wonder4.save
