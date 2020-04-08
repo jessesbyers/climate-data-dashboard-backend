@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_04_07_131420) do
   create_table "charts", force: :cascade do |t|
     t.string "name"
     t.string "data_url"
+    t.string "screenshot_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

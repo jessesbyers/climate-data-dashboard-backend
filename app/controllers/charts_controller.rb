@@ -28,6 +28,6 @@ class ChartsController < ApplicationController
     private
 
     def chart_params
-        params.require(:chart).permit(:name, :data_url)
+        params.require(:chart).permit(:name, :data_url, :screenshot_url)
     end
 end

@@ -3,6 +3,7 @@ class CreateCharts < ActiveRecord::Migration[6.0]
     create_table :charts do |t|
       t.string :name
       t.string :data_url
+      t.string :screenshot_url
 
       t.timestamps
     end
