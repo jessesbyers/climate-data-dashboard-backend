@@ -31,12 +31,12 @@ notice1 = Notice.new(content: "The temperature line zigzags up and down, but the
 notice2 = Notice.new(content: "The highest US average temperature was in 2012 (55 degrees F) and the lowest average temperature was in 1917 (50 degrees F)", votes: 2, chart_id: 1)
 
 notice3 = Notice.new(content: "There was very low precipitation between 1952 and 1956", votes: 3, chart_id: 2)
-notice4 = Notice.new(content: "Precipitation has been above average every year since 2013.", votes: 0, chart_id: 2)
+notice4 = Notice.new(content: "Precipitation has been above average every year since 2013.", votes: 1, chart_id: 2)
 
-wonder1 = Wonder.new(content: "Why does the line zigzag up and and down so often?", votes: 0, chart_id: 1)
+wonder1 = Wonder.new(content: "Why does the line zigzag up and and down so often?", votes: 1, chart_id: 1)
 wonder2 = Wonder.new(content: "Why was it so much colder before 1930?", votes: 3, chart_id: 1)
 
-wonder3 = Wonder.new(content: "Why do we hear about droughtas and wildfires so often if average precipitation has been above average the past 7 years?", votes: 5, chart_id: 2)
+wonder3 = Wonder.new(content: "Why do we hear about droughts and wildfires so often if average precipitation has been above average the past 7 years?", votes: 5, chart_id: 2)
 wonder4 = Wonder.new(content: "Is there a relationship between temperature and precipitation patterns each year?", votes: 2, chart_id: 2)
 
 notice1.save
