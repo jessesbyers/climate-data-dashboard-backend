@@ -25,6 +25,15 @@ class WondersController < ApplicationController
 
     end
 
+    def update
+        @wonder = @chart.wonders.find_by(id: params[:id])
+        if @wonder.update(votes: params[:updatedWonder][:votes])
+            render json: WonderSerializer.new(@wonder)
+        else 
+            render json: {error: "Vote was not updated. Please try again."}
+        end
+    end
+
     def destroy
         @wonder = @chart.wonders.find_by(id: params[:id])
         @wonder.destroy

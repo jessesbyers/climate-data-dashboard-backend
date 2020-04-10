@@ -8,10 +8,8 @@ class NoticesController < ApplicationController
     end
 
     def show
-        # @notice = Notice.find(params[:id])
         @notice = @chart.notices.find_by(id: params[:id])
         render json: NoticeSerializer.new(@notice)
-
     end
 
     def create
