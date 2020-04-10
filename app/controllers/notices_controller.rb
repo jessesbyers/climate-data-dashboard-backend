@@ -24,6 +24,15 @@ class NoticesController < ApplicationController
 
     end
 
+    def update
+        @notice = @chart.notices.find_by(id: params[:id])
+        if @notice.update(notice_params)
+            render json: NoticeSerializer.new(@notice)
+        else 
+            render json: {error: "Vote was not updated. Please try again."}
+        end
+    end
+
     def destroy
         @notice = @chart.notices.find_by(id: params[:id])
         @notice.destroy
