@@ -4,4 +4,5 @@ class Chart < ApplicationRecord
     
     validates :name, presence: true
     validates :data_url, presence: true
+    validates :screenshot_url, presence: true
 end
