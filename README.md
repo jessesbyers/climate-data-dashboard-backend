@@ -7,8 +7,11 @@ This project was created with a Ruby on Rails backend API which manages all of t
 ## Resources and Links
 
 Frontend Repository: https://github.com/jessesbyers/climate-data-dashboard-frontend
+
 Backend Repository: https://github.com/jessesbyers/climate-data-dashboard-backend
+
 Blog Post: https://jessesbyers.github.io/climate_data_dashboard_react-redux_project
+
 Video Walkthrough: https://drive.google.com/file/d/1IVsYRaElQui7Se3lXT8yAWIy3wBS149a/view
 
 *This project was inspired by the NOAA climate.gov Global Climate Dashboard. All charts resources included in the seeds file were retrieved from this interactive site: https://www.climate.gov/maps-data#global-climate-dashboard 
